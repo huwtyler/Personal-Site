@@ -1,0 +1,360 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+/* RESET */
+html, body {
+	height: 100%;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+	
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Elements */
+
+body {
+	line-height: 1;
+	background: #333;
+	font-family: 'Source Code Pro', monospace;
+}
+header {
+	width: 100%;
+	height: 120px;
+	background: #FFF;
+}
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+nav ul {
+	display: flex;
+}
+	nav ul li {
+		display: inline-block;
+		text-align: center;
+		border-left: 1px solid #333;
+		padding: 37px;
+	}
+		nav ul li:hover {
+			background: #FF002F;
+		}
+	nav ul li:hover .icon {
+		fill: #FFF;
+	}
+	nav button {
+		border: none;
+		padding: 0;
+		background: #FFF;
+		cursor: pointer;
+	}
+	
+.red {
+	color: #FF002F;
+}	
+
+.container {
+	width: 100%;
+	margin: 50px 70px;
+}
+.pin-container {
+	float: left;
+	margin-right: 15px;
+	margin-top: 2px;
+	height: 24px;
+}
+
+/* forms */
+
+input {
+	padding: 10px;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 1.2em;
+	width: 300px;
+}
+textarea {
+	font-size: 1.2em;
+	padding: 10px;
+	border: none;
+	width: 300px;
+}
+button {
+	padding: 10px;
+	background: #FF002F;
+	border: none;
+	color: #FFF;
+	font-family: 'Source Code Pro', monospace;
+	font-size: 1.2em;
+	cursor: pointer;
+}
+
+/* Menu styles */
+
+.st-menu ul {
+	list-style: none;
+	margin-top: 30px;
+}
+
+.st-menu ul li a {
+	display: block;
+	padding: 0 0 0 30px;
+	outline: none;
+	color: #333;
+	text-transform: uppercase;
+	-webkit-transition: background 0.3s, box-shadow 0.3s;
+	transition: background 0.3s, box-shadow 0.3s;
+	font-size: 80px;
+	font-weight: 700;
+}
+
+.st-menu ul li a:hover {
+	color: #FF002F;
+}
+.mobile-only-menu {
+	margin-top: 50px;
+	display: none;
+}
+	.mobile-only-menu a {
+		color: #FF002F !important;
+	}
+
+
+
+/* Type etc */
+
+h1, h2, p {
+
+}
+
+h1, h2, span.mobile-h1 {
+	text-transform: uppercase;
+	font-weight: bold;
+	line-height: 0.8;
+	color: #FFF;
+}
+
+span.mobile-h1, h1 {
+	color: #FF002F;
+	position: absolute;
+	top: 45px;
+	left: 70px;
+	font-size: 40px;
+}
+	span.mobile-h1 {
+		display: none;
+	}
+h2 {
+	font-size: 170px;
+	margin-bottom: 50px;
+}
+p {
+	font-size: 25px;
+	color: #FFF;
+}
+	p.description {
+		margin-bottom: 50px;
+	}
+	p.location {
+		margin-bottom: 35px;
+	}
+	p.copyright {
+		color: #333;
+		position: absolute;
+		bottom: 151px;
+		font-weight: 700;
+		font-size: 16px;
+		left: 30px;
+	}
+a {
+	color: #FF002F;
+	text-decoration: none;
+}
+	a.white-link {
+		color: #FFF;
+	}
+
+/* Menu function */
+
+.st-container, .st-pusher, .st-content {
+	height: 100%;
+}
+.st-content {
+	overflow-y: scroll;
+	background: #333;
+}
+.st-container {
+	position: relative;
+	overflow: hidden;
+}
+.st-pusher {
+	position: relative;
+	left: 0;
+	z-index: 99;
+	-webkit-transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+}
+.st-pusher::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+	content: '';
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+.st-menu-open .st-pusher::after {
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.st-menu {
+	position: absolute;
+	top: 121px;
+	right: 0;
+	z-index: 100;
+	visibility: hidden;
+	width: 470px;
+	height: 100%;
+	background: #FFF;
+	-webkit-transition: all 0.5s;
+	transition: all 0.5s;
+}
+.st-menu::after {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.2);
+	content: '';
+	opacity: 1;
+	-webkit-transition: opacity 0.5s;
+	transition: opacity 0.5s;
+}
+.st-menu-open .st-menu::after {
+	width: 0;
+	height: 0;
+	opacity: 0;
+	-webkit-transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+	transition: opacity 0.5s, width 0.1s 0.5s, height 0.1s 0.5s;
+}
+.st-effect-1.st-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(100%, 0, 0);
+	transform: translate3d(100%, 0, 0);
+}
+.st-effect-1.st-menu-open .st-effect-1.st-menu {
+	visibility: visible;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+.st-effect-1.st-menu::after {
+	display: none;
+}
+
+.no-csstransforms3d .st-pusher, .no-js .st-pusher {
+	padding-right: 467px;
+}
+
+@media (max-width: 667px) {
+	nav ul li:hover {
+		background: inherit;
+	}
+		nav ul li:hover .icon {
+			fill: inherit;
+		}
+		.icon-email, .icon-instagram, .icon-twitter {
+			display: none;
+		}
+	.container {
+		margin: 40px 30px;
+	}
+	.pin-container {
+		float: left;
+		margin-right: 10px;
+		margin-top: 2px;
+		height: 15px;
+	}
+	
+	/* Menu styles */
+	
+	.st-menu ul {
+		margin-top: 30px;
+	}
+	
+	.st-menu ul li a {
+		padding: 0 0 0 30px;
+		font-size: 50px;
+	}
+	
+	.st-menu ul li a:hover {
+		color: inherit;
+	}
+	.mobile-only-menu {
+		display: block;
+	}
+	
+	/* Type etc */
+
+	span.mobile-h1, h1 {
+		top: 45px;
+		left: 30px;
+		font-size: 40px;
+		display: none;
+	}
+	span.mobile-h1 {
+		display: block;
+	}
+	h2 {
+		font-size: 100px;
+		margin-bottom: 50px;
+	}
+	p {
+		font-size: 16px;
+	}
+		p.description {
+			margin-bottom: 30px;
+		}
+		p.location {
+			margin-bottom: 25px;
+		}
+		
+		
+	/* Menu function */
+
+	.st-menu {
+		width: 100%;
+	}
+}
