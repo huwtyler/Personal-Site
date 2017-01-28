@@ -1,5 +1,8 @@
 /* FONTS */
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700');
+
+
 
 /* RESET */
 html, body {
@@ -88,9 +91,9 @@ nav ul {
 }
 .pin-container {
 	float: left;
-	margin-right: 15px;
+	margin-right: 10px;
 	margin-top: 2px;
-	height: 24px;
+	height: 18px;
 }
 
 /* forms */
@@ -173,11 +176,13 @@ span.mobile-h1, h1 {
 		display: none;
 	}
 h2 {
+	font-family: 'Montserrat', sans-serif;
+
 	font-size: 170px;
 	margin-bottom: 50px;
 }
 p {
-	font-size: 25px;
+	font-size: 18px;
 	color: #FFF;
 }
 	p.description {
@@ -356,5 +361,26 @@ a {
 
 	.st-menu {
 		width: 100%;
+	}
+}
+
+@media (max-width: 320px) {
+
+	span.mobile-h1, h1 {
+		top: 45px;
+		left: 30px;
+		font-size: 40px;
+		display: none;
+	}
+	span.mobile-h1 {
+		display: block;
+	}
+	h2 {
+		font-size: 70px;
+		margin-bottom: 50px;
+	}
+	p {
+		font-size: 16px;
+		width: 80%;
 	}
 }
